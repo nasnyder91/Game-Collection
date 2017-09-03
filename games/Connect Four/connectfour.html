@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Connect Four</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="game">
+    <div class="board">
+
+    </div>
+    <div class="pieces">
+
+    </div>
+    <div class="infoBoard">
+      <table class="table table-responsive">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Red</th>
+            <th>Black</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Wins</th>
+            <td class="redWins">0</td>
+            <td class="blackWins">0</td>
+          </tr>
+        </tbody>
+      </table>
+      <button id="newGameBtn" class="buttons newGameBtn btn btn-default" type="button" name="button">New Game</button><br>
+      <button id="clearScoresBtn" class="buttons btn btn-default" type="button" name="button">Clear Scores</button><br>
+      <button id="switchTurn" class="buttons btn btn-default" type="button" name="button">Switch Turns</button>
+    </div>
+  </div>
+
+  <div class="modal fade bs-example-modal" id="winModal" data-backdrop="static" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <h1 id="winMsg"></h1>
+          <table id="scoreBoard" class="table table-responsive">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Red</th>
+                <th>Black</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Wins</th>
+                <td class="redWins">0</td>
+                <td class="blackWins">0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="newGameBtn btn btn-default" data-dismiss="modal">New Game</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+  <script src="../../js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

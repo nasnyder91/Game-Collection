@@ -1,0 +1,70 @@
+.board{
+  display: grid;
+  height: 50vw;
+  width: 50vw;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0;
+  margin: auto;
+  border: 5px #f4f4f4 solid;
+}
+
+@media (min-width: 600px) {
+    .board {
+        max-width: 700px;
+        max-height: 700px;
+    }
+}
+
+.boxes{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#box1{
+  border-right: 1px #000 solid;
+  border-bottom: 1px #000 solid;
+}
+#box2{
+  border-right: 1px #000 solid;
+  border-left: 1px #000 solid;
+  border-bottom: 1px #000 solid;
+}
+#box3{
+  border-left: 1px #000 solid;
+  border-bottom: 1px #000 solid;
+}
+#box4{
+  border-top: 1px #000 solid;
+  border-right: 1px #000 solid;
+  border-bottom: 1px #000 solid;
+}
+#box5{
+  border-top: 1px #000 solid;
+  border-right: 1px #000 solid;
+  border-left: 1px #000 solid;
+  border-bottom: 1px #000 solid;
+}
+#box6{
+  border-top: 1px #000 solid;
+  border-left: 1px #000 solid;
+  border-bottom: 1px #000 solid;
+}
+#box7{
+  border-right: 1px #000 solid;
+  border-top: 1px #000 solid;
+}
+#box8{
+  border-top: 1px #000 solid;
+  border-left: 1px #000 solid;
+  border-right: 1px #000 solid;
+}
+#box9{
+  border-top: 1px #000 solid;
+  border-left: 1px #000 solid;
+}
+
+#scoreBoard{
+  margin: auto;
+  width: 10% !important;
+}

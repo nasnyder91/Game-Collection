@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="text-center">
+      <h1>Tic Tac Toe</h1>
+    </div>
+    <div class="info text-center">
+      <button id="newGameBtn" class="newGameBtn btn btn-default" type="button" name="button">New Game</button>
+      <button id="clearScoresBtn" class="btn btn-default" type="button" name="button">Clear Scores</button>
+      <label id="turn">Turn: X</label>
+      <button id="switchTurn" class="btn btn-default" type="button" name="button">Switch Turns</button>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="container">
+    <div class="board">
+      <div class="boxes" id="box1" taken="false" value=""></div>
+      <div class="boxes" id="box2" taken="false" value=""></div>
+      <div class="boxes" id="box3" taken="false" value=""></div>
+      <div class="boxes" id="box4" taken="false" value=""></div>
+      <div class="boxes" id="box5" taken="false" value=""></div>
+      <div class="boxes" id="box6" taken="false" value=""></div>
+      <div class="boxes" id="box7" taken="false" value=""></div>
+      <div class="boxes" id="box8" taken="false" value=""></div>
+      <div class="boxes" id="box9" taken="false" value=""></div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="container">
+    <table id="scoreBoard" class="table table-responsive">
+      <thead>
+        <tr>
+          <th></th>
+          <th>X</th>
+          <th>O</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Wins</th>
+          <td class="x-wins">0</td>
+          <td class="o-wins">0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modal fade bs-example-modal" id="winModal" data-backdrop="static" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <h1 id="winMsg"></h1>
+          <table id="scoreBoard" class="table table-responsive">
+            <thead>
+              <tr>
+                <th></th>
+                <th>X</th>
+                <th>O</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Wins</th>
+                <td class="x-wins">0</td>
+                <td class="o-wins">0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="newGameBtn btn btn-default" data-dismiss="modal">New Game</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+    <script src="../../js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
