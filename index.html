@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Games Collection | Nick Snyder</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="navbar navbar-inverse bg-inverse">
+    <div class="container d-flex justify-content-between">
+      <a href="#" class="navbar-brand">Games Collection | Nick Snyder</a>
+    </div>
+  </div>
+
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Its AMAZING!</h1>
+      <p class="lead text-muted">Simple games made by the one and only Pumbasaurus!</p>
+    </div>
+  </section>
+
+
+  <div class="album text-muted">
+    <div class="container">
+
+      <div class="row">
+        <div class="card btn" data-toggle="modal" data-target="#infoModal" data-game="Tic Tac Toe">
+          <img class="gameImg img-responsive" src="img/tictactoe.png" alt="Game Image">
+          <p class="card-text">Tic Tac Toe</p>
+        </div>
+        <div class="card btn" data-toggle="modal" data-target="#infoModal" data-game="Connect Four">
+          <img class="gameImg img-responsive" src="img/connect4.png" alt="Game Image">
+          <p class="card-text">Connect Four</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+    <!-- Modal -->
+  <div class="modal fade bs-example-modal" id="infoModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="gameTitle"></h5>
+        </div>
+
+        <div class="modal-body">
+          <img class="modalImg img-responsive" src="" alt="Game Image">
+          <p class="modalInfo">Game info and rules</p>
+        </div>
+
+        <div class="modal-footer">
+          <a class="btn btn-success" id="playGame" href="">Play Game</a>
+          <button type="button" class="btn btn-default" id="cancelEdit" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+  <script src="js/bootstrap.min.js"> </script>
+  <script src="js/main.js"></script>
+</body>
+</html>
