@@ -12,7 +12,7 @@ body, html{
   position: fixed;
   width: 20vw;
   right: 20px;
-  top: 40px;
+  top: 60px;
 }
 
 .table thead tr th {
@@ -29,7 +29,7 @@ body, html{
   margin: auto;
   position: relative;
   display: grid;
-  width: 50vw;
+  width: 40vw;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(7, 1fr);
   grid-gap: 0;
@@ -76,7 +76,7 @@ body, html{
 }
 @media (max-width: 500px) {
   .board{
-    width: 75vw;
+    width: 65vw;
     border-width: 5px;
   }
 }
