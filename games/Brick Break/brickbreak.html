@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Gamedev Phaser Workshop - lesson 01: Initialize the framework</title>
+    <style>* { padding: 0; margin: 0; }</style>
+    <script src="js/phaser.min.js"></script>
+    <link rel="shortcut icon" href="">
+</head>
+  <body>
+    <script>
+        var game = new Phaser.Game(960, 640, Phaser.AUTO, null, {
+          preload: preload, create: create, update: update
+        });
+
+        var ball;
+        var paddle;
+        var bricks;
+        var newBrick;
+        var brickInfo;
+        var scoreText;
+        var score = 0;
+        var lives = 3;
+        var livesText;
+        var lifeLostText;
+        var gameOverText;
+        var winText;
+        var playing = false;
+        var startButton;
+        var xVel = 160;
+        var yVel = -160;
+        var velMult = 1;
+        var bounceMult = 2.5;
+
+
+        function preload() {
+          game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+          game.scale.pageAlignHorizontally = true;
+          game.scale.pageAlignVertically = true;
+          game.stage.backgroundColor = '#000';
+          game.load.image('paddle', 'img/paddle.png');
+          game.load.image('brick', 'img/brick.png');
+          game.load.spritesheet('ball', 'img/wobble.png', 10,10);
+          game.load.spritesheet('button', 'img/button.png', 120, 40);
+          game.load.spritesheet('metal', 'img/metal.png', 60, 20);
+        }
+
+        function create() {
+          game.physics.startSystem(Phaser.Physics.ARCADE);
+
+          ball = game.add.sprite(game.world.width*0.5, game.world.height-40, 'ball');
+          ball.animations.add('wobble', [0,1,0,2,0,1,0,2,0], 24);
+
+          ball.anchor.set(0.5);
+
+          game.physics.arcade.checkCollision.down = false;
+          ball.checkWorldBounds = true;
+
+          ball.events.onOutOfBounds.add(ballLeaveScreen, this);
+
+          paddle = game.add.sprite(game.world.width*0.5, game.world.height, 'paddle');
+          paddle.anchor.set(0.5,1);
+
+          game.physics.enable(paddle, Phaser.Physics.ARCADE);
+          game.physics.enable(ball, Phaser.Physics.ARCADE);
+
+          ball.body.collideWorldBounds = true;
+          ball.body.bounce.set(1);
+
+          paddle.body.immovable = true;
+
+          initBricks();
+
+          textStyle = { font: '18px Arial', fill: '#0095DD' };
+
+          scoreText = game.add.text(5, 5, 'Points: 0', textStyle);
+
+          livesText = game.add.text(game.world.width-5, 5, 'Lives: '+lives, textStyle);
+          livesText.anchor.set(1,0);
+
+          lifeLostText = game.add.text(game.world.width*0.5, game.world.height*0.5, 'Life lost, click to continue', textStyle);
+          lifeLostText.anchor.set(0.5);
+          lifeLostText.visible = false;
+
+          gameOverText = game.add.text(game.world.width*0.5, game.world.height*0.5, 'Game Over, click to play again', textStyle);
+          gameOverText.anchor.set(0.5);
+          gameOverText.visible = false;
+
+          winText = game.add.text(game.world.width*0.5, game.world.height*0.5, 'You have destroyed all of the bricks!  YOU WIN!!', textStyle);
+          winText.anchor.set(0.5);
+          winText.visible = false;
+
+          startButton = game.add.button(game.world.width*0.5, game.world.height*0.5, 'button', startGame, this, 1, 0, 2);
+          startButton.anchor.set(0.5);
+        }
+
+        function update() {
+          game.physics.arcade.collide(ball, paddle, ballHitPaddle);
+          game.physics.arcade.collide(ball, bricks, ballHitBrick);
+          if(playing) {
+            paddle.x = game.input.x || game.world.width*0.5;
+          }
+        }
+
+        function initBricks() {
+          brickInfo = {
+              width: 60,
+              height: 20,
+              count: {
+                  row: 14,
+                  col: 8
+              },
+              evenOffset: {
+                  top: 80,
+                  left: 80
+              },
+              oddOffset: {
+                top:80,
+                left: 110
+              },
+              padding: 0
+          };
+
+          bricks = game.add.group();
+
+          for(c=0; c<brickInfo.count.col; c++) {
+            for(r=0; r<brickInfo.count.row; r++) {
+              var rand = Math.random()*10;
+              if(c%2 == 0){
+                var brickX = (r*(brickInfo.width+brickInfo.padding))+brickInfo.evenOffset.left;
+                var brickY = (c*(brickInfo.height+brickInfo.padding))+brickInfo.evenOffset.top;
+              }else{
+                var brickX = (r*(brickInfo.width+brickInfo.padding))+brickInfo.oddOffset.left;
+                var brickY = (c*(brickInfo.height+brickInfo.padding))+brickInfo.oddOffset.top;
+              }
+
+              if(rand <= 2){
+                newBrick = game.add.sprite(brickX, brickY, 'metal');
+                newBrick.animations.add('break', [0,1,2,3], 24);
+              } else{
+                newBrick = game.add.sprite(brickX, brickY, 'brick');
+              }
+
+              game.physics.enable(newBrick, Phaser.Physics.ARCADE);
+              newBrick.body.immovable = true;
+              newBrick.anchor.set(0.5);
+              bricks.add(newBrick);
+            }
+          }
+      }
+
+      function ballHitBrick(ball, brick) {
+        ball.animations.play('wobble');
+
+        if(brick.key == "metal"){
+          if(brick.broken == true){
+            brick.body.enable = false;
+
+            var killTween = game.add.tween(brick.scale).to({x:0,y:0}, 100, Phaser.Easing.Linear.None, true);
+
+            killTween.onComplete.addOnce(function(){
+                brick.kill();
+            }, this);
+            killTween.start();
+
+            score += 10;
+            scoreText.setText('Points: '+score);
+          }else{
+            brick.animations.play('break');
+            brick.broken = true;
+          }
+        }
+
+        if(brick.key == "brick"){
+          brick.body.enable = false;
+
+          var killTween = game.add.tween(brick.scale).to({x:0,y:0}, 100, Phaser.Easing.Linear.None, true);
+
+          killTween.onComplete.addOnce(function(){
+              brick.kill();
+          }, this);
+          killTween.start();
+
+          score += 10;
+          scoreText.setText('Points: '+score);
+        }
+
+
+
+        if(velMult < 1.15){
+          velMult += .01;
+          bounceMult += .4;
+          xVel = ball.body.velocity.x*velMult;
+          yVel = ball.body.velocity.y*velMult;
+        }else if(velMult >= 1.15){
+          xVel = ball.body.velocity.x;
+          yVel = ball.body.velocity.y;
+        }
+
+        ball.body.velocity.set(xVel, yVel);
+
+        if(score === brickInfo.count.row*brickInfo.count.col*10) {
+          ball.velocity.set(0,0);
+          winText.visible = true;
+          playing = false;
+          game.input.onDown.addOnce(function(){
+            velMult = 1;
+            bounceMult = 2.5;
+            lives = 3;
+            score = 0;
+            game.world.removeAll();
+            create();
+          }, this);
+        }
+      }
+
+      function ballLeaveScreen() {
+        lives--;
+        if(lives) {
+          livesText.setText('Lives: '+lives);
+          lifeLostText.visible = true;
+          ball.reset(game.world.width*0.5, game.world.height-40);
+          paddle.reset(game.world.width*0.5, game.world.height);
+          velMult = 1;
+          bounceMult = 2.5;
+          game.input.onDown.addOnce(function(){
+            lifeLostText.visible = false;
+            ball.body.velocity.set(150, -150);
+          }, this);
+        }
+        else {
+          playing = false;
+          gameOverText.visible = true;
+          game.input.onDown.addOnce(function(){
+            velMult = 1;
+            bounceMult = 2.5;
+            lives = 3;
+            score = 0;
+            game.world.removeAll();
+            create();
+          }, this);
+        }
+      }
+
+      function ballHitPaddle(ball, paddle) {
+        ball.animations.play('wobble');
+        ball.body.velocity.x -= bounceMult*(paddle.x-ball.x);
+      }
+
+      function startGame() {
+        startButton.destroy();
+        ball.body.velocity.set(150, -150);
+        playing = true;
+      }
+    </script>
+  </body>
+</html>

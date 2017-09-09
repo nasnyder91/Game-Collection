@@ -55,6 +55,7 @@ $(document).ready(function(){
       }
       if($(boardArr[r][col]).attr("taken") != "true"){
         endTop = $(boardArr[r][col]).offset().top - $(".game").scrollTop();
+        console.log($(".game").scrollTop());
         $(".pieces").append("<img id='piece"+r+col+"' class='piece img-responsive' row='"+r+"' col='"+col+"' src='"+noURLPiece+"'>");
         $("#piece"+r+col+"").offset({top:beginTop, left: beginLeft});
         $("#piece"+r+col+"").height(height);
