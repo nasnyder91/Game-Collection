@@ -5,12 +5,46 @@
   background-color: #f7f7f7;
 }
 
+.navbar{
+  background-color: #282828;
+  margin-bottom: 0;
+}
+.navbar-brand{
+  color: #ede8e8;
+}
+
+.jumbotron{
+  background-image: url('../img/jumboBG.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 0;
+  border-bottom: 1px #282828 solid;
+}
+
+.jumbotron-heading{
+  font-weight: 600;
+  color: #ce0a0a !important;
+  text-shadow: 2px 2px 1px #000 !important;
+}
+
+.album{
+  background-color: #f2f2f2;
+  padding-bottom: 1000px;
+}
+
+.row{
+  display: flex;
+}
+
 .card {
-  float: left;
-  width: 33.333%;
+  flex: 1;
   padding: .75rem;
   margin-bottom: 2rem;
+  margin-left: 5%;
+  margin-right: 5%;
   border: 0;
+  font-size: 26px;
+  font-weight: 800 !important;
 }
 
 .card > img {
@@ -31,4 +65,13 @@
 
 .modalInfo{
 
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#socialLinks{
 }
