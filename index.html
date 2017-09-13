@@ -12,7 +12,7 @@
 <body>
   <div class="navbar">
     <div class="container d-flex justify-content-between">
-      <a href="#" class="navbar-brand">Classic Games Collection | Nick Snyder</a>
+      <a href="index.html" class="navbar-brand">Classic Games Collection | Nick Snyder</a>
     </div>
   </div>
 
@@ -25,15 +25,15 @@
 
   <div class="album">
       <div class="row">
-        <div class="card btn" data-toggle="modal" data-target="#infoModal" data-game="Tic Tac Toe" gameLink="games/tic tac toe/tictactoe.html">
+        <div class="game-card card btn" data-toggle="modal" data-target="#infoModal" data-game="Tic Tac Toe" gameLink="games/tic tac toe/tictactoe.html">
           <img class="gameImg img-responsive" src="img/tictactoe.png" alt="Game Image">
           <p class="card-text">Tic Tac Toe</p>
         </div>
-        <div class="card btn" data-toggle="modal" data-target="#infoModal" data-game="Connect Four" gameLink="games/Connect Four/connectfour.html">
+        <div class="game-card card btn" data-toggle="modal" data-target="#infoModal" data-game="Connect Four" gameLink="games/Connect Four/connectfour.html">
           <img class="gameImg img-responsive" src="img/connect4.png" alt="Game Image">
           <p class="card-text">Connect Four</p>
         </div>
-        <div class="card btn" data-toggle="modal" data-target="#infoModal" data-game="Brick Break" gameLink="games/Brick Break/brickbreak.html">
+        <div class="game-card card btn" data-toggle="modal" data-target="#infoModal" data-game="Brick Break" gameLink="games/Brick Break/brickbreak.html">
           <img class="gameImg img-responsive" src="img/Brick Break.png" alt="Game Image">
           <p class="card-text">Brick Break</p>
         </div>
@@ -43,16 +43,20 @@
   <footer>
     <div class="container">
       <ul id="socialLinks" class="list-inline">
-        <li class="socialLink list-inline-item"><a href="https://www.linkedin.com/in/nick-snyder-development
-          "><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-        <li class="socialLink list-inline-item"><a href="https://github.com/nasnyder91"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-        <li class="socialLink list-inline-item"><i class="fa fa-envelope" aria-hidden="true"></i></li>
+        <li class="col-xs-12 col-sm-3 col-md-3 col-lg-2 socialLink list-inline-item"><a href="https://www.linkedin.com/in/nick-snyder-development
+          "><i class="fa fa-linkedin" aria-hidden="true"></i>LinkedIn</a></li>
+        <li class="col-xs-12 col-sm-3 col-md-3 col-lg-2 socialLink list-inline-item"><a href="https://github.com/nasnyder91"><i class="footerIcon fa fa-github" aria-hidden="true"></i>GitHub</a></li>
+        <li class="col-xs-12 col-sm-6 col-md-6 col-lg-4 socialLink list-inline-item"><a href="#contactModal" data-toggle="modal" role="button"><i class="fa fa-envelope" aria-hidden="true"></i>Contact</a></li>
       </ul>
     </div>
   </footer>
 
-    <!-- Modal -->
-  <div class="modal fade bs-example-modal" id="infoModal" tabindex="-1" role="dialog">
+
+
+
+
+    <!-- Modals -->
+  <div class="modal fade" id="infoModal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
 
@@ -72,6 +76,26 @@
       </div>
     </div>
   </div>
+
+
+  <div id="contactModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form class="form-horizontal col-sm-12">
+            <div class="form-group"><label>Name</label><input class="form-control required" placeholder="Your name" data-placement="top" data-trigger="manual" data-content="Must be at least 3 characters long, and must only contain letters." type="text"></div>
+            <div class="form-group"><label>E-Mail</label><input class="form-control email" placeholder="Your email" data-placement="top" data-trigger="manual" data-content="Must be a valid e-mail address (user@gmail.com)" type="text"></div>
+            <div class="form-group"><label>Message</label><textarea class="form-control" placeholder="Your message.." data-placement="top" data-trigger="manual"></textarea></div>
+            <div class="form-group"><button type="submit" class="btn btn-success pull-right">Send</button> <p class="help-block pull-left text-danger hide" id="form-error">&nbsp; The form is not valid. </p></div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 
   <script

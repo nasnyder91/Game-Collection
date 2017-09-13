@@ -1,3 +1,11 @@
+body,html{
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
 .album {
   min-height: 50rem; /* Can be removed; just added for demo purposes */
   padding-top: 3rem;
@@ -9,8 +17,17 @@
   background-color: #282828;
   margin-bottom: 0;
 }
+
 .navbar-brand{
   color: #ede8e8;
+}
+
+.navbar-brand:hover{
+  color: #ede8e8;
+}
+
+.navbar-brand:focus {
+  color:  white;
 }
 
 .jumbotron{
@@ -18,7 +35,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   margin-bottom: 0;
-  border-bottom: 1px #282828 solid;
+  border-bottom: 1px #707070 solid;
 }
 
 .jumbotron-heading{
@@ -28,8 +45,12 @@
 }
 
 .album{
-  background-color: #f2f2f2;
+  background-color: #c6c6c6;
   padding-bottom: 1000px;
+}
+
+.game-card:hover{
+  background-color: #d3d3d3;
 }
 
 .row{
@@ -55,23 +76,62 @@
   font-size: 85%;
 }
 
+.card-text:hover {
+  color: #444444;
+}
 .modal-body{
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-.modalImg{
-}
-
-.modalInfo{
-
+.album p:hover {
+  color: #232323;
 }
 
 footer{
-  position: fixed;
+  position: sticky;
   bottom: 0;
   width: 100%;
+  background-color: #282828;
+  padding:0;
 }
 
 #socialLinks{
+  font-size: 20px !important;
+  margin-bottom: 0;
+
+}
+
+#socialLinks li {
+  padding: 5px 0 5px 0;
+}
+
+.socialLink a {
+  text-decoration: none;
+    color: grey;
+}
+
+.socialLink a:hover {
+    color: white;
+}
+
+.socialLink i {
+  padding-right: 10px;
+  color: white;
+}
+
+@media (max-width:800px) {
+  #socialLinks {
+    text-align: center;
+  }
+  .socialLink i {
+    padding-right: 5px;
+}
+
+@media (max-width:400px) {
+  .navbar-brand {
+    font-size: 12px;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
