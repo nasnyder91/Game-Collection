@@ -25,15 +25,15 @@
 
   <div class="album">
       <div class="row">
-        <div class="game-card card btn" data-toggle="modal" data-target="#infoModal" data-game="Tic Tac Toe" gameLink="games/tic tac toe/tictactoe.html">
+        <div class="game-card card btn" data-toggle="modal" data-target="#infoModal" data-game="Tic Tac Toe" gameLink="games/TicTacToe/tictactoe.html" readMeURL="games/TicTacToe/readme.txt">
           <img class="gameImg img-responsive" src="img/tictactoe.png" alt="Game Image">
           <p class="card-text">Tic Tac Toe</p>
         </div>
-        <div class="game-card card btn" data-toggle="modal" data-target="#infoModal" data-game="Connect Four" gameLink="games/Connect Four/connectfour.html">
+        <div class="game-card card btn" data-toggle="modal" data-target="#infoModal" data-game="Connect Four" gameLink="games/ConnectFour/connectfour.html" readMeURL="games/ConnectFour/readme.txt">
           <img class="gameImg img-responsive" src="img/connect4.png" alt="Game Image">
           <p class="card-text">Connect Four</p>
         </div>
-        <div class="game-card card btn" data-toggle="modal" data-target="#infoModal" data-game="Brick Break" gameLink="games/Brick Break/brickbreak.html">
+        <div class="game-card card btn" data-toggle="modal" data-target="#infoModal" data-game="Brick Break" gameLink="games/BrickBreak/brickbreak.html" readMeURL="games/BrickBreak/readme.txt">
           <img class="gameImg img-responsive" src="img/Brick Break.png" alt="Game Image">
           <p class="card-text">Brick Break</p>
         </div>
@@ -64,9 +64,9 @@
           <h5 class="modal-title" id="gameTitle"></h5>
         </div>
 
-        <div class="modal-body">
+        <div class="modal-body" id="infoBody">
           <img class="modalImg img-responsive" src="" alt="Game Image">
-          <p class="modalInfo">Game info and rules</p>
+          <p id="modalInfo">Game info and rules</p>
         </div>
 
         <div class="modal-footer">
@@ -81,7 +81,7 @@
   <div id="contactModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-body">
+        <div class="modal-body" id="contactBody">
           <form class="form-horizontal col-sm-12">
             <div class="form-group"><label>Name</label><input class="form-control required" placeholder="Your name" data-placement="top" data-trigger="manual" data-content="Must be at least 3 characters long, and must only contain letters." type="text"></div>
             <div class="form-group"><label>E-Mail</label><input class="form-control email" placeholder="Your email" data-placement="top" data-trigger="manual" data-content="Must be a valid e-mail address (user@gmail.com)" type="text"></div>
