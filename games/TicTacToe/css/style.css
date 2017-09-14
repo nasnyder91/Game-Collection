@@ -3,7 +3,6 @@
 }
 
 .board{
-  position: relative;
   display: grid;
   height: 50rem;
   width: 50rem;
@@ -16,6 +15,7 @@
 }
 
 .boxes{
+  position:relative;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
