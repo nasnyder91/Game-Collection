@@ -4,8 +4,8 @@
 
 .board{
   display: grid;
-  height: 30vw;
-  width: 30vw;
+  height: 50rem;
+  width: 50rem;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 0;
   margin: auto;
@@ -74,7 +74,7 @@
 }
 @media (max-width: 768px) {
   .board {
-      height: 50vw;
-      width: 50vw;
+      height: 50rem;
+      width: 50rem;
   }
 }
