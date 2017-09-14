@@ -134,7 +134,7 @@ footer{
 
 @media (max-width:736px){
   footer{
-    position: fixed;
+    position: relative;
   }
 }
 
