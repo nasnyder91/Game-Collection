@@ -9,14 +9,13 @@
   width: 50rem;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3,1fr);
+  align-items: stretch;
   grid-gap: 0;
   margin: auto;
   border: 5px #f4f4f4 solid;
 }
 
 .boxes{
-  display: flex;
-  flex-direction: column;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
