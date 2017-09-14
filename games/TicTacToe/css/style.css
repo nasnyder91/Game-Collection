@@ -67,12 +67,12 @@
   width: 10% !important;
 }
 
-@media (min-width: 600px) {
+/*@media (min-width: 600px) {
     .board {
         max-width: 700px;
         max-height: 700px;
     }
-}
+}*/
 @media (max-width: 768px) {
   .board {
       height: 30rem;
