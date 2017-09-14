@@ -81,10 +81,23 @@
       <div class="modal-content">
         <div class="modal-body" id="contactBody">
           <form class="form-horizontal col-sm-12" action="http://formspree.io/n.a.snyder@comcast.net" method="POST">
-            <div class="form-group"><label>Name</label><input class="form-control required" placeholder="Your name" data-placement="top" data-trigger="manual" data-content="Must be at least 3 characters long, and must only contain letters." type="text" name="name"></div>
-            <div class="form-group"><label>E-Mail</label><input class="form-control email" placeholder="Your email" data-placement="top" data-trigger="manual" data-content="Must be a valid e-mail address (user@gmail.com)" type="text" name="_replyto"></div>
-            <div class="form-group"><label>Message</label><textarea class="form-control" placeholder="Your message.." data-placement="top" data-trigger="manual" name="body"></textarea></div>
-            <div class="form-group"><button type="submit" class="btn btn-success pull-right">Send</button> <p class="help-block pull-left text-danger hide" id="form-error">&nbsp; The form is not valid. </p></div>
+            <div class="form-group">
+              <label>Name</label>
+              <input class="form-control required" placeholder="Your name" data-placement="top" data-trigger="manual" data-content="Must be at least 3 characters long, and must only contain letters." type="text" name="name">
+            </div>
+            <div class="form-group">
+              <label>E-Mail</label>
+              <input class="form-control email" placeholder="Your email" data-placement="top" data-trigger="manual" data-content="Must be a valid e-mail address (user@gmail.com)" type="text" name="_replyto">
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea class="form-control" placeholder="Your message.." data-placement="top" data-trigger="manual" name="body"></textarea>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-success pull-right">Send</button>
+              <p class="help-block pull-left text-danger hide" id="form-error">&nbsp; The form is not valid. </p>
+            </div>
+            <input type="hidden" name="_next" value="//site.io/thanks.html" />
           </form>
         </div>
         <div class="modal-footer">
