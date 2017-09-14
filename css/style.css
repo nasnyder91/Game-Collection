@@ -132,6 +132,12 @@ footer{
     padding-right: 5px;
 }
 
+@media (max-width:736px){
+  footer{
+    position: fixed;
+  }
+}
+
 @media (max-width:400px) {
   .navbar-brand {
     font-size: 12px;
