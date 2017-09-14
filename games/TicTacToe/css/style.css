@@ -7,6 +7,7 @@
   height: 50rem;
   width: 50rem;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3,1fr);
   grid-gap: 0;
   margin: auto;
   border: 5px #f4f4f4 solid;
@@ -74,7 +75,7 @@
 }
 @media (max-width: 768px) {
   .board {
-      height: 50rem;
-      width: 50rem;
+      height: 30rem;
+      width: 30rem;
   }
 }
