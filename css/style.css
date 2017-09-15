@@ -80,21 +80,54 @@ body,html{
   color: #444444;
 }
 
+.modal-header{
+  background-color: #3f3f3f;
+  color: #ede8e8;
+}
+
 .modal-body{
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
   z-index: 0;
+  background-color: #c6c6c6;
+}
+
+input[type="text"], textarea{
+  background-color: #c6c6c6;
 }
 
 .modalImg{
   position: relative;
-  width: auto;
-  height: auto;
+  padding-right: 10px;
+}
+
+#modalInfo{
+  padding-top: 5px;
+  padding-left: 10px;
+  font-size: 16px;
+  text-align: justify;
+  border-left: 1px black solid;
+}
+
+.modal-footer{
+  background-color: #3f3f3f;
+}
+
+.modalButton{
+  background-color: #347734;
+  color: #ede8e8;
+  font-weight: bold;
+  font-size: 18px;
+  border: 0;
 }
 
 #contactBody{
-  display: flex;
+  display: flex !important;
+  position: relative;
+  width: 100%;
+  background-color: #3f3f3f;
+  color: #ede8e8;
 }
 
 .album p:hover {
@@ -138,6 +171,9 @@ footer{
   top: 5px;
   right: 5px;
   z-index: 1;
+  font-size: 32px;
+  color: white;
+
 }
 
 textarea{
@@ -150,6 +186,7 @@ textarea{
   }
   .socialLink i {
     padding-right: 5px;
+  }
 }
 
 @media (max-width:736px){
@@ -158,6 +195,23 @@ textarea{
   }
   footer{
     position: relative;
+  }
+  .modal-body{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 0.5fr 0.5fr;
+  }
+  .modalImg{
+    width: 70%;
+    padding-right: 0;
+    padding-bottom: 10px;
+    margin: auto;
+  }
+
+  #modalInfo{
+    padding-left: 0;
+    padding-top: 10px;
+    border: 0;
   }
 }
 
