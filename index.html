@@ -57,6 +57,9 @@
   <div class="modal fade" id="infoModal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
+        <button type="button" class="close" aria-label="Close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
 
         <div class="modal-header">
           <h5 class="modal-title" id="gameTitle"></h5>
@@ -69,7 +72,6 @@
 
         <div class="modal-footer">
           <a class="btn btn-success" id="playGame" href="">Play Game</a>
-          <button type="button" class="btn btn-default" id="cancelEdit" data-dismiss="modal">Cancel</button>
         </div>
       </div>
     </div>
@@ -79,6 +81,9 @@
   <div id="contactModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
+        <button type="button" class="close" aria-label="Close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
         <div class="modal-body" id="contactBody">
           <form class="form-horizontal col-sm-12" action="http://formspree.io/n.a.snyder@comcast.net" method="POST">
             <div class="form-group">
@@ -99,9 +104,6 @@
             </div>
             <input type="hidden" name="_next" value="//nasnyder91.github.io/Game-Collection/" />
           </form>
-        </div>
-        <div class="modal-footer">
-          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
         </div>
       </div>
     </div>

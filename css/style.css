@@ -83,6 +83,7 @@ body,html{
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
+  z-index: 0;
 }
 #contactBody{
   display: flex;
@@ -124,6 +125,17 @@ footer{
   color: white;
 }
 
+.close{
+  position: relative;
+  top: 5px;
+  right: 5px;
+  z-index: 1;
+}
+
+textarea{
+  resize: vertical;
+}
+
 @media (max-width:800px) {
   #socialLinks {
     text-align: center;
@@ -133,6 +145,9 @@ footer{
 }
 
 @media (max-width:736px){
+  .row{
+    flex-direction: column !important;
+  }
   footer{
     position: relative;
   }
