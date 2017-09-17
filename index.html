@@ -80,12 +80,12 @@
 
   <div id="contactModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content" id="contactContent">
         <button type="button" class="close" aria-label="Close" data-dismiss="modal">
           <span aria-hidden="true">&times;</span>
         </button>
         <div class="modal-body" id="contactBody">
-          <form class="form-horizontal col-sm-12" action="http://formspree.io/n.a.snyder@comcast.net" method="POST">
+          <form class="form-horizontal col-sm-12" action="https://formspree.io/n.a.snyder@comcast.net" method="POST">
             <div class="form-group">
               <label>Name</label>
               <input class="form-control required" placeholder="Your name" data-placement="top" data-trigger="manual" data-content="Must be at least 3 characters long, and must only contain letters." type="text" name="name">
@@ -96,7 +96,7 @@
             </div>
             <div class="form-group">
               <label>Message</label>
-              <textarea class="form-control" placeholder="Your message.." data-placement="top" data-trigger="manual" name="body"></textarea>
+              <textarea id="contactMessage" class="form-control" placeholder="Your message.." data-placement="top" data-trigger="manual" name="body"></textarea>
             </div>
             <div class="form-group">
               <button type="submit" class="modalButton btn btn-success pull-right">Send</button>
