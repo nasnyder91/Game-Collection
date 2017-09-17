@@ -1,11 +1,23 @@
 body, html{
   height: 100%;
   width: 100%;
-  background-color: #dbdbdb;
+  background-color: #c6c6c6;
 }
 
-.game{
+.navbar-brand{
+  color: #ede8e8 !important;
+}
 
+#newGameBtn, #clearScoresBtn{
+  background-color: #282828;
+  color: #ede8e8;
+}
+
+.title{
+  font-size: 36px;
+  font-weight: bold;
+  color: #ce0a0a;
+  text-shadow: 2px 2px 1px #000 !important;
 }
 
 .infoBoard{
@@ -78,5 +90,13 @@ body, html{
   .board{
     width: 65vw;
     border-width: 5px;
+  }
+}
+
+@media (max-width:400px) {
+  .navbar-brand {
+    font-size: 12px;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
