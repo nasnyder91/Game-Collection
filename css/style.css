@@ -93,6 +93,10 @@ input[type="text"]{
   background-color: #c6c6c6;
 }
 
+input[type="email"]{
+  background-color: #c6c6c6;
+}
+
 #contactMessage{
   background-color: #c6c6c6;
 }
