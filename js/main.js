@@ -1,4 +1,39 @@
 $(document).ready(function(){
+  var form = $("#theForm");
+  $('#theForm').on('submit', function(e) {
+       e.preventDefault();
+
+       var name = $('#name').val();
+
+       var email = $('#email').val();
+
+       var comments = $('#contactMessage').val();
+
+       if(form[0].checkValidity()){
+         $.ajax({
+             url:'https://formspree.io/n.a.snyder@comcast.net',
+             method:'POST',
+             data:{
+                 name:name,
+                 _replyto:email,
+                  email:email,
+                 comments:comments,
+                 _subject:'Game Collection site form submission',
+             },
+             dataType:"json",
+             success:function() {
+                 console.log('success');
+                 $('#formThankYou').show();
+             }
+
+         });
+       } else{
+         console.log("not valid");
+         form.find(':submit').click();
+       }
+   });
+
+
   $('#infoModal').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget); // Button that triggered the modal
     var game = button.data('game'); // Extract info from data-* attributes
