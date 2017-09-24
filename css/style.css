@@ -7,6 +7,10 @@ body,html{
   background-color: #c6c6c6;
 }
 
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #C6C6C6 inset;
+}
+
 .album {
   padding-top: 3rem;
   padding-bottom: 3rem;
