@@ -1,5 +1,10 @@
 $(document).ready(function(){
   var form = $("#theForm");
+
+  webshim.activeLang('en');
+  webshims.polyfill('forms');
+  webshims.cfg.no$Switch = true;
+  
   $('#theForm').on('submit', function(e) {
        e.preventDefault();
 
