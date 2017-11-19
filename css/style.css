@@ -61,8 +61,8 @@ input:-webkit-autofill {
   flex: 1;
   padding: .75rem;
   margin-bottom: 2rem;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
   border: 0;
   font-size: 26px;
   font-weight: 800 !important;
